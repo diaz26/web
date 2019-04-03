@@ -15,11 +15,11 @@
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" style="background-color:black" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" style="background-color:black" aria-hidden="true"></span>
             <span class="sr-only">Siguiente</span>
           </a>
         </div>
@@ -30,31 +30,51 @@
                 <h3 class="card-title" style="font-family: hughs; text-align:center; color: #0492E8">Algunos de nuestros productos</h3>
               </div>
               <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="card text-white bg-secondary mb-3" style="width: 14rem;">
-                      <img src="<?= base_url(); ?>images/p4.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Detalles</a>
-                        <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Ver en tienda</a>
-                      </div>
+                <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <center><div class="card text-white bg-secondary mb-3" style="width:50%">
+                        <img src="<?= base_url(); ?>images/p4.jpg" style="width:100%" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Detalles</a>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Ver en tienda</a>
+                        </div>
+                      </div></center>
+                    </div>
+                    <div class="carousel-item">
+                      <center><div class="card text-white bg-secondary mb-3" style="width:50%">
+                        <img src="<?= base_url(); ?>images/p2.jpg" style="width:100%" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Detalles</a>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Ver en tienda</a>
+                        </div>
+                      </div></center>
+                    </div>
+                    <div class="carousel-item">
+                      <center><div class="card text-white bg-secondary mb-3" style="width:50%">
+                        <img src="<?= base_url(); ?>images/p3.jpg" style="width:100%" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Detalles</a>
+                          <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Ver en tienda</a>
+                        </div>
+                      </div></center>
                     </div>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="card text-white bg-secondary mb-3" style="width: 14rem;">
-                      <img src="<?= base_url(); ?>images/p4.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Detalles</a>
-                        <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF">Ver en tienda</a>
-                      </div>
-                    </div>
-                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleFade1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" style="background-color:black" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleFade1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" style="background-color:black" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                  </a>
                 </div>
-
               </div>
               <div class="card-footer text-muted">
                 <a href="#" class="btn btn-primary" style="background-color: #e3f2fd; color: #007BFF">Ver todos</a>
