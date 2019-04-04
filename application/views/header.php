@@ -15,7 +15,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: <?= $nav->bg_color; ?>;">
     <a class="navbar-brand" href="<?= base_url(); ?>">
-      <img src="<?= base_url(); ?>images/moto.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="<?= base_url().$nav->logo; ?>" width="30" height="30" class="d-inline-block align-top" alt="">
     <b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->nombre; ?></b>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
