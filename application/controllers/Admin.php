@@ -6,9 +6,11 @@ class Admin extends CI_Controller {
 	public function index()
 	{
     if($this->session->userdata('logged_in')){
+			if($this->session->userdata('ROL')=='Teletrabajo'){
       $this->load->view('header');
   		$this->load->view('view_admin');
   		$this->load->view('footer');
+		}
     }else {
       redirect("login");
     }
