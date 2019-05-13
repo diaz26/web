@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
-	public function __construct(){
+	function __construct(){
     parent::__construct();
-    $this->load->model('model_nav');
+		$this->load->model('model_nav');
 		$this->load->model('model_banner');
   }
 
