@@ -8,6 +8,7 @@ class Productos extends CI_Controller {
     $this->load->model('model_header');
     $this->load->model('model_clientes');
     $this->load->model('model_productos');
+    $this->load->model('model_nav');
   }
 
   public function index()
@@ -100,12 +101,15 @@ class Productos extends CI_Controller {
   }
   public function agregar(){
     if ($this->session->userdata('logged_in')) {
-      if($this->session->userdata('ROL')=='Cliente'){
-        $header['head']=$this->model_header->consultOficial(1);
+      if($this->session->userdata('ROL')=='Admin'){
+        //$nav['nav']=$this->model_header->consultOficial(1);
         //$header['productos']=$this->model_productos->traerproductos();
-        $this->load->view('header_loged',$header);
+        $nav['nav']=$this->model_nav->consultNav(1);
+        //$this->load->view('header_loged',$nav);
+        $this->load->view('header',$nav);
         $this->load->view('view_agregar');
-        $this->load->view('footer_loged');
+      //  $this->load->view('footer_loged');
+        $this->load->view('footer');
       }else {
         $this->load->view('error_page');
       }
@@ -116,7 +120,7 @@ class Productos extends CI_Controller {
 
   public function agregardeverdad(){
     if ($this->session->userdata('logged_in')) {
-      if($this->session->userdata('ROL')=='Cliente'){
+      if($this->session->userdata('ROL')=='Admin'){
         $urldeimagen							="/images/";
         $config['upload_path'] 		= ".".$urldeimagen;
         $file_name 								= md5(time()."-".rand(1,999));
@@ -129,24 +133,37 @@ class Productos extends CI_Controller {
           // code...
           $dataCargada = $this->upload->data();
           $agregados = array(
-            'Nombre'=>$this->input->post('Nombre'),
-            'Marca'=>$this->input->post('Marca'),
-            'Descripcion'=>$this->input->post('Descripcion'),
-            'Imagen'=>$urldeimagen.$dataCargada['file_name'],
-            'Precio'=>$this->input->post('Precio'),
-            'id_dueno'=>$this->session->userdata('ID')
+            'nombre'=>$this->input->post('nombre'),
+            'descripcion'=>$this->input->post('descripcion'),
+            'parte'=>$this->input->post('parte'),
+            'ubicacion'=>$this->input->post('ubicacion'),
+            'precio'=>$this->input->post('Precio'),
+            'marca'=>$this->input->post('marca'),
+            'referencia'=>$this->input->post('referencia'),
+            'year'=>$this->input->post('year'),
+            'color'=>$this->input->post('color'),
+            'img'=>$urldeimagen.$dataCargada['file_name'],
+
+            //'id_dueno'=>$this->session->userdata('ID')
           );
         }else{
           $agregados = array(
-            'Nombre'=>$this->input->post('Nombre'),
-            'Marca'=>$this->input->post('Marca'),
-            'Descripcion'=>$this->input->post('Descripcion'),
-            'Precio'=>$this->input->post('Precio'),
-            'id_dueno'=>$this->session->userdata('ID')
+            'nombre'=>$this->input->post('nombre'),
+            'descripcion'=>$this->input->post('descripcion'),
+            'parte'=>$this->input->post('parte'),
+            'ubicacion'=>$this->input->post('ubicacion'),
+            'precio'=>$this->input->post('precio'),
+            'marca'=>$this->input->post('marca'),
+            'referencia'=>$this->input->post('referencia'),
+            'year'=>$this->input->post('year'),
+            'color'=>$this->input->post('color'),
+            'img'=>$urldeimagen.$dataCargada['file_name'],
+
+            //'id_dueno'=>$this->session->userdata('ID')
           );
         }
         $this->model_productos->agregar($agregados);
-        redirect("Productos",'refresh');
+        redirect("Admin",'refresh');
       }else {
         $this->load->view('error_page');
       }

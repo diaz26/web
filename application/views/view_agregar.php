@@ -15,54 +15,97 @@
                   <div class="col-md-4 pr-md-1">
                     <div class="form-group">
                       <label><b>Nombre</b></label><br>
-                      <input type="text" class="form-control" name="Nombre" value="">
+                      <input type="text" class="form-control" name="nombre" value="">
                     </div>
                   </div>
                   <div class="col-md-4 px-md-1">
                     <div class="form-group">
                       <label><b>Marca</b></label><br>
-                      <input type="text" class="form-control" name="Marca" value="">
+                      <input type="text" class="form-control" name="marca" value="">
                     </div>
                   </div>
                   <div class="col-md-4 pl-md-1">
                     <div class="form-group">
                       <label><b>Precio</b></label><br>
-                      <input type="number" class="form-control" name="Precio" value="">
+                      <input type="number" class="form-control" name="precio" value="">
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-5 pr-md-1">
-                    <div class="form-group">
-                      <b>Imagen:</b><br><img src="" width="30%" id="imaproducto">
-                      <input type="file" name="tcarga" id="upload" value="">
-                      <script>
-                      document.getElementById("upload").onchange = function() {
-                        var reader = new FileReader(); //instanciamos el objeto de la api FileReader
 
-                        reader.onload = function(e) {
-                          document.getElementById("imaproducto").src = e.target.result;
-                        };
-
-                        // read the image file as a data URL.
-                        reader.readAsDataURL(this.files[0]);
-                      };
-                      </script>
-                    </div>
-                  </div>
                   <div class="col-md-7 pl-md-1">
                     <div class="row">
                       <div class="col-md-12 pr-md-1">
                         <div class="form-group">
-                          <label><b>Descripcion:</b></label><br>
-                          <textarea name="Descripcion" class="form-control" rows="2" cols="80"></textarea>
+                          <label><b>color:</b></label><br>
+                          <input type="text" class="form-control" name="color" value="">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 px-md-1">
+                        <div class="form-group">
+                          <label><b>parte:</b></label><br>
+                          <input type="text" class="form-control" name="parte" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 pl-md-1">
+                        <div class="form-group">
+                          <label><b>ubicacion:</b></label><br>
+                          <input type="text" class="form-control" name="ubicacion" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 pl-md-1">
+                        <div class="form-group">
+                          <label><b>referencia:</b></label><br>
+                          <input type="text" class="form-control" name="referencia" value="">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12 pr-md-1">
+                        <div class="form-group">
+                          <label><b>Año:</b></label><br>
+                          <input type="number" class="form-control" name="year" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 px-md-1">
+                        <div class="form-group">
+                          <label><b>Descripcion:</b></label><br>
+                          <textarea name="descripcion" class="form-control" rows="2" cols="80"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5 pr-md-1">
+                        <div class="form-group">
+                          <b>Imagen:</b><br><img src="" width="30%" id="imaproducto">
+                          <input type="file" name="tcarga" id="upload" value="">
+                          <script>
+                          document.getElementById("upload").onchange = function() {
+                            var reader = new FileReader(); //instanciamos el objeto de la api FileReader
+
+                            reader.onload = function(e) {
+                              document.getElementById("imaproducto").src = e.target.result;
+                            };
+
+                            // read the image file as a data URL.
+                            reader.readAsDataURL(this.files[0]);
+                          };
+                          </script>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 pl-md-1">
                         <br>
-                        <center><input type="submit" value="Agregar" style="width:150px;background-color:<?php echo $head->nav_bg; ?>" class="form-control"></center>
+                        <center><input type="submit" value="Agregar" style="width:150px;background-color:<?php echo $nav->bg_color; ?>" class="form-control"></center>
                       </div>
                     </div>
                   </div>
