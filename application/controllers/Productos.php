@@ -46,7 +46,7 @@ class Productos extends CI_Controller {
           //$header['head']=$this->model_header->consultOficial(1);
           $nav['nav']=$this->model_nav->consultNav(1);
           $dataid['producto']=$this->model_productos->producto($id);
-          $this->load->view('header_loged',$nav);
+          $this->load->view('header',$nav);
           $this->load->view('view_modproductos',$dataid);
         //  $this->load->view('footer');
           //$this->load->view('footer_loged',$header);
@@ -63,7 +63,7 @@ class Productos extends CI_Controller {
 
   public function modificar(){
     if ($this->session->userdata('logged_in')) {
-      if($this->session->userdata('ROL')=='Cliente'){
+      if($this->session->userdata('ROL')=='Admin'){
         $urldeimagen							="/images/";
         $config['upload_path'] 		= ".".$urldeimagen;
         $file_name 								= md5(time()."-".rand(1,999));
@@ -75,24 +75,35 @@ class Productos extends CI_Controller {
         if ($this->upload->do_upload('tcarga')){
           $dataCargada = $this->upload->data();
           $datap = array(
-            'Nombre' => $this->input->post('Nombre'),
-            'Marca'=>$this->input->post('Marca'),
-            'Descripcion'=>$this->input->post('Descripcion'),
-            'Imagen'=>$urldeimagen.$dataCargada['file_name'],
-            'Precio'=>$this->input->post('Precio'),
+            'nombre'=>$this->input->post('nombre'),
+            'descripcion'=>$this->input->post('descripcion'),
+            'parte'=>$this->input->post('parte'),
+            'ubicacion'=>$this->input->post('ubicacion'),
+            'precio'=>$this->input->post('precio'),
+            'marca'=>$this->input->post('marca'),
+            'referencia'=>$this->input->post('referencia'),
+            'year'=>$this->input->post('year'),
+            'color'=>$this->input->post('color'),
+            'img'=>$urldeimagen.$dataCargada['file_name'],
           );
         }
         else {
           $datap = array(
-            'Nombre' => $this->input->post('Nombre'),
-            'Marca'=>$this->input->post('Marca'),
-            'Descripcion'=>$this->input->post('Descripcion'),
-            'Precio'=>$this->input->post('Precio'),
+            'nombre'=>$this->input->post('nombre'),
+            'descripcion'=>$this->input->post('descripcion'),
+            'parte'=>$this->input->post('parte'),
+            'ubicacion'=>$this->input->post('ubicacion'),
+            'precio'=>$this->input->post('precio'),
+            'marca'=>$this->input->post('marca'),
+            'referencia'=>$this->input->post('referencia'),
+            'year'=>$this->input->post('year'),
+            'color'=>$this->input->post('color'),
+            //'img'=>$urldeimagen.$dataCargada['file_name'],
           );
         }
         $id=$this->input->post('id');
         $this->model_productos->modificar($id,$datap);
-        redirect("Productos",'refresh');
+        redirect("Admin",'refresh');
       }else {
         $this->load->view('error_page');
       }

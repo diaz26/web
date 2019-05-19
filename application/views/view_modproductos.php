@@ -12,24 +12,25 @@
               <h3><b>Editar producto</b></h3>
               <hr>
               <form action="<?=base_url(); ?>index.php/productos/modificar/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php  echo $producto->id; ?>">
                 <div class="row">
                   <div class="col-md-4 pr-md-1">
                     <div class="form-group">
                       <label><b>Nombre</b></label><br>
-                      <input type="text" class="form-control" name="Nombre" value="<?php  echo $producto->nombre; ?>">
+                      <input type="text" class="form-control" name="nombre" value="<?php  echo $producto->nombre; ?>">
                       <input type="hidden" name="id" value="<?php  echo $producto->id; ?>">
                     </div>
                   </div>
                   <div class="col-md-4 px-md-1">
                     <div class="form-group">
                       <label><b>Marca</b></label><br>
-                      <input type="text" class="form-control" name="Marca" value="<?php  echo $producto->marca; ?>">
+                      <input type="text" class="form-control" name="marca" value="<?php  echo $producto->marca; ?>">
                     </div>
                   </div>
                   <div class="col-md-4 pl-md-1">
                     <div class="form-group">
                       <label><b>Precio</b></label><br>
-                      <input type="number" class="form-control" name="Precio" value="<?php  echo $producto->precio; ?>">
+                      <input type="number" class="form-control" name="precio" value="<?php  echo $producto->precio; ?>">
                     </div>
                   </div>
                 </div>

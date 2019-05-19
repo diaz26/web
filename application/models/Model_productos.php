@@ -53,7 +53,7 @@ class Model_productos extends CI_Model {
 
   public function modificar($id,$datap){
     $this->db->where('id',$id);
-    $this->db->update('baseo_productos',$datap);
+    $this->db->update('web_productos',$datap);
   }
 
   public function eliminar($id){

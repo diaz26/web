@@ -36,64 +36,64 @@
 
   <header class="navbar-header">
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:<?= $head->nav_bg; ?>">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color:<?= $nav->bg_color; ?>">
       <div class="container" style="background-color:<?= $head->nav_bg; ?>">
 
-        <a class="navbar-brand" href="<?= base_url(); ?>"> <img src="<?= base_url().$head->logo; ?>" alt="">
-          <span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>"><?= $head->abreviacion; ?></span>
+        <a class="navbar-brand" href="<?= base_url(); ?>"> <img src="<?= base_url().$nav->logo; ?>" alt="">
+          <span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $nav->color; ?>"></span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon  icon_menu" style="color:<?= $head->color; ?>"></span>
+          <span class="navbar-toggler-icon  icon_menu" style="color:<?= $nav->color; ?>"></span>
         </button>
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto" style="background-color:<?= $head->nav_bg; ?>">
+          <ul class="navbar-nav ml-auto" style="background-color:<?= $nav->bg_color; ?>">
             <?php
             if ($this->session->userdata('ROL')=='Cliente') {
               ?>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/cliente"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Inicio</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/cliente"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Inicio</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/informacion"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Informacion</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/informacion"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $nav->color; ?>">Informacion</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/pagina"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Pagina web</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/pagina"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Pagina web</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/productos"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Productos</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/productos"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Productos</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/pedidos"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Pedidos</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/pedidos"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Pedidos</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/ventas"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Ventas</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/ventas"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Ventas</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/servicio"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Servicio</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/servicio"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Servicio</span></a>
               </li>
               <?php
             }
             if ($this->session->userdata('ROL')=='Admin') {
               ?>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="#informacion"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">informacion</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="#informacion"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">informacion</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="#servicio"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">servicio</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="#servicio"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">servicio</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="#clientes"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">clientes</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="#clientes"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">clientes</span></a>
               </li>
               <li class="nav-item">
-                <a data-scroll="" class="nav-link section-scroll" href="#pagos"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">pagos</span></a>
+                <a data-scroll="" class="nav-link section-scroll" href="#pagos"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">pagos</span></a>
               </li>
 
               <?php
             }
             ?>
             <li class="nav-item">
-              <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/login/session_dest"><span style="font-size: <?= $head->size; ?>px;font-family: <?= $head->fuente; ?>;color:<?= $head->color; ?>">Salir</span></a>
+              <a data-scroll="" class="nav-link section-scroll" href="<?= base_url(); ?>index.php/login/session_dest"><span style="font-size: <?= $nav->size; ?>px;font-family: <?= $nav->fuente; ?>;color:<?= $nav->color; ?>">Salir</span></a>
             </li>
           </ul>
 
