@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
     $this->load->model('model_service');
     $this->load->model('model_nav');
     $this->load->model('model_banner');
+    $this->load->model('Model_productos');
   }
 
   public function index()
@@ -18,6 +19,7 @@ class Admin extends CI_Controller {
 			if($this->session->userdata('ROL')=='Admin'){
       	$nav['nav']=$this->model_nav->consultNav(1);
       //  $nav['banner']=$this->model_nav-> consultBanner(1);
+        $nav['productos']=$this->Model_productos->consultaproductos();
 				$this->load->view('header',$nav);
 
 				$this->load->view('view_admin');
