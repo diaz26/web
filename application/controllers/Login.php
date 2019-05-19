@@ -6,41 +6,53 @@ class Login extends CI_Controller {
 	public function __construct(){
     parent::__construct();
     $this->load->model('model_login');
+		$this->load->model('model_nav');
+		$this->load->model('model_banner');
   }
 
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('view_login');
+		$nav['nav']=$this->model_nav->consultNav(1);
+		$body['banner']=$this->model_banner->consultBanner(1);
+		$this->load->view('header',$nav);
+		$this->load->view('view_login',$body);
 		$this->load->view('footer');
 	}
 
 	public function valida()
 	{
-		$user=$this->input->post('user');
-		$pass=$this->input->post('pass');
-		$security=$this->input->post('security');
+		if (isset($_POST['user'])) {
+			$users=$this->input->post('user');
+			$pass=$this->input->post('pass');
+			//$security=$this->input->post('security');
+			$result=$this->model_login->comprobar($user,$pass);
 
-		$result=$this->model_login->validar($user,$pass,$security);
+			if ($result->comprobando==1) {
 
-		if ($result->cuenta==1) {
+				$date=$this->model_login->traer($user,$pass);
+				$session=array(
+					'ID'=>$date->id,
+					'USER'=>$date->user,
+					'PASS'=>$date->pass,
+					'ROL'=>$date->rol,
+					'SECURITY'=>$date->security,
+					'logged_in'=> true
+				);
 
-			$date=$this->model_login->consulta_user($user,$pass,$security);
-			$session=array(
-				'ID'=>$date->id,
-				'USER'=>$date->user,
-				'PASS'=>$date->pass,
-				'ROL'=>$date->rol,
-				'SECURITY'=>$date->security,
-				'logged_in'=> true
-			);
+				$this->session->set_userdata($session);
 
-			$this->session->set_userdata($session);
-			redirect("".base_url()."index.php/admin");
+					redirect("".base_url()."index.php/Admin");
+
+			}
+			else {
+						$this->session->set_flashdata('msg', '<div> User/Password or Security Invalid</div>');
+						redirect("".base_url()."index.php/login");
+					}
 		}else {
-			$this->session->set_flashdata('msg', '<div> User/Password or Security Invalid</div>');
-			redirect("".base_url()."index.php/login");
+				  $this->load->view('error_page');
 		}
+
+
 
 	}
 

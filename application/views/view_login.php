@@ -18,7 +18,7 @@
 
               <div class="hero-text">
                 <center><h2>Login</h2></center>
-                <form action="<?= base_url(); ?>index.php/login/validar" method="post">
+                <form action="<?= base_url(); ?>index.php/Login/valida" method="post">
 
                   <div class="form-group">
                     <center><input style="width:50%;text-align: center" type="text" name="user" class="form-control" placeholder="User" required></center>
@@ -26,8 +26,9 @@
                   <div class="form-group">
                     <center><input style="width:50%;text-align: center" type="password" name="pass" class="form-control" placeholder="Password" required></center>
                   </div>
+
                   <div class="form-group">
-                    <center><input type="submit" class="form-control" value="Ingresar" style="width:35%;background-color: <?= $head->nav_bg; ?>"></center>
+                    <center><input type="submit" class="form-control" value="Ingresar" style="width:35%;background-color: <?= $nav->bg_color; ?>"></center>
                   </div>
                   <div class="input-group">
                     <?php echo $this->session->flashdata('msg'); ?>

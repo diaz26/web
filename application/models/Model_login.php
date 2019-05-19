@@ -7,8 +7,8 @@ class Model_login extends CI_Model {
     parent::__construct();
 
   }
-  public function comprobar($usuario,$password){
-    $sql="SELECT COUNT(*) apodo FROM baseo_usuarios WHERE user='$usuario' AND pass='$password'";
+  public function comprobar($users,$pass){
+    $sql="SELECT COUNT(*) comprobando FROM web_users WHERE user='$users' AND pass='$pass'";
     $query=$this->db->query($sql);
     return $query->row();
   }
@@ -17,8 +17,8 @@ class Model_login extends CI_Model {
     $this->db->update('baseo_usuarios',array('pass'=>$newpass));
   }
 
-  public function traer($usuario,$password){
-    $sql="SELECT * FROM baseo_usuarios WHERE user='$usuario' AND pass='$password'";
+  public function traer($users,$pass){
+    $sql="SELECT * FROM web_users WHERE user='$users' AND pass='$pass'";
     $query=$this->db->query($sql);
     //cuando es un solo registro
     return $query->row();
