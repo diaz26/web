@@ -16,9 +16,9 @@
                 <div class="row">
                   <div class="col-md-5 pr-md-1" style="">
                     <div class="form-group">
-                      <b>Logo:</b><br><img src="<?php echo base_url().$head->logo;?>" width="10%" id="algo">
-                      <input type="file" name="tcarga" id="upload" value="<?php echo $head->logo; ?>">
-                      <input type="hidden" name="id" value="<?php echo $head->id; ?>">
+                      <b>Logo:</b><br><img src="<?php echo base_url().$nav->logo;?>" width="10%" id="algo">
+                      <input type="file" name="tcarga" id="upload" value="<?php echo $nav->logo; ?>">
+                      <input type="hidden" name="id" value="<?php echo $nav->id; ?>">
 
                       <script>
                       document.getElementById("upload").onchange = function() {
@@ -38,39 +38,40 @@
                   <div class="col-md-4 px-md-1" style="">
                     <div class="form-group">
                       <label><b>Nombre:</b></label><br>
-                      <input type="text" name="nombre" class="form-control" value="<?php echo $head->nombre; ?>">
+                      <input type="text" name="nombre" class="form-control" value="<?php echo $nav->nombre; ?>">
                     </div>
                   </div>
                   <div class="col-md-3 pl-md-1" style="">
                     <div class="form-group">
-                      <label><b>Abreviacion:</b></label><br>
-                      <input type="text" name="abreviacion" class="form-control" value="<?php echo $head->abreviacion; ?>">
+                      <label><b>nombre de la web:</b></label><br>
+                      <input type="text" name="abreviacion" class="form-control" value="<?php echo $nav->nombre_web; ?>">
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-3 pr-md-1" style="">
                     <div class="form-group">
                       <label><b>Fondo:</b></label><br>
-                      <input type="text" name="nav_bg" class="form-control" value="<?php echo $head->nav_bg; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
+                      <input type="text" name="nav_bg" class="form-control" value="<?php echo $nav->bg_color; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
                     </div>
                   </div>
                   <div class="col-md-3 px-md-1" style="">
                     <div class="form-group">
                       <label><b>Color de textos:</b></label><br>
-                      <input type="text" name="color" class="form-control" value="<?php echo $head->color; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
+                      <input type="text" name="color" class="form-control" value="<?php echo $nav->bg_color; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
                     </div>
                   </div>
                   <div class="col-md-3 px-md-1" style="">
                     <div class="form-group">
                       <label><b>Fuente:</b></label><br>
-                      <input type="text" name="fuente" class="form-control" value="<?php echo $head->fuente; ?>">
+                      <input type="text" name="fuente" class="form-control" value="<?php echo $nav->fuente; ?>">
                     </div>
                   </div>
                   <div class="col-md-3 pl-md-1" style="">
                     <div class="form-group">
                       <label><b>Tamaño:</b></label><br>
-                      <input type="number" name="size" class="form-control" value="<?php echo $head->size; ?>">
+                      <input type="number" name="size" class="form-control" value="<?php echo $nav->size; ?>">
                     </div>
                   </div>
                 </div>
@@ -78,32 +79,61 @@
                   <div class="col-md-3 pr-md-1" style="">
                     <div class="form-group">
                       <label><b>Opcion 1:</b></label><br>
-                      <input type="text" name="op1" class="form-control" value="<?php echo $head->op1; ?>">
+                      <input type="text" name="op1" class="form-control" value="<?php echo $nav->op1; ?>">
                     </div>
                   </div>
-                  <div class="col-md-3 px-md-1" style="">
+                  <div class="col-md-4 px-md-1" style="">
+                    <div class="form-group">
+                      <label><b>Nombre:</b></label><br>
+                      <input type="text" name="nombre" class="form-control" value="<?php echo $nav->nombre; ?>">
+                    </div>
+                  </div>
+                  <div class="col-md-3 pl-md-1" style="">
+                    <div class="form-group">
+                      <label><b>nombre de la web:</b></label><br>
+                      <input type="text" name="abreviacion" class="form-control" value="<?php echo $nav->nombre_web; ?>">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 pr-md-1" style="">
                     <div class="form-group">
                       <label><b>Opcion 2:</b></label><br>
-                      <input type="text" name="op2" class="form-control" value="<?php echo $head->op2; ?>">
+                      <input type="text" name="nav_bg" class="form-control" value="<?php echo $nav->op2; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
                     </div>
                   </div>
                   <div class="col-md-3 px-md-1" style="">
                     <div class="form-group">
                       <label><b>Opcion 3:</b></label><br>
-                      <input type="text" name="op3" class="form-control" value="<?php echo $head->op3; ?>">
+                      <input type="text" name="color" class="form-control" value="<?php echo $nav->op3; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
+                    </div>
+                  </div>
+                  <div class="col-md-3 px-md-1" style="">
+                    <div class="form-group">
+                      <label><b>Opcion 4:</b></label><br>
+                      <input type="text" name="fuente" class="form-control" value="<?php echo $nav->op4; ?>">
                     </div>
                   </div>
                   <div class="col-md-3 pl-md-1" style="">
                     <div class="form-group">
-                      <label><b>Opcion 4:</b></label><br>
-                      <input type="text" name="op4" class="form-control" value="<?php echo $head->op4; ?>">
+                      <label><b>Opcion 5</b></label><br>
+                      <input type="number" name="size" class="form-control" value="<?php echo $nav->op31; ?>">
                     </div>
                   </div>
                 </div>
+          <div class="row">
+            <div class="col-md-3 pr-md-1" style="">
+              <div class="form-group">
+                <label><b>opion 6:</b></label><br>
+                <input type="text" name="abreviacion" class="form-control" value="<?php echo $nav->op32; ?>">
+              </div>
+            </div>
+          </div>
                 <div class="row">
                   <div class="col-md-12 pl-md-1">
                     <br>
-                    <center><input type="submit" value="Actualizar" style="width:150px;background-color:<?php echo $head->nav_bg; ?>" class="form-control"></center>
+                    <center><input type="submit" value="Actualizar" style="width:150px;background-color:<?php echo $nav->bg_color; ?>" class="form-control"></center>
                   </div>
 
                 </div>

@@ -5,16 +5,21 @@ class Admin extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
-    $this->load->model('model_header');
+  //  $this->load->model('model_header');
     $this->load->model('model_admin');
     $this->load->model('model_service');
+    $this->load->model('model_nav');
+    $this->load->model('model_banner');
   }
 
   public function index()
 	{
 		if($this->session->userdata('logged_in')){
 			if($this->session->userdata('ROL')=='Admin'){
-				$this->load->view('header');
+      	$nav['nav']=$this->model_nav->consultNav(1);
+      //  $nav['banner']=$this->model_nav-> consultBanner(1);
+				$this->load->view('header',$nav);
+
 				$this->load->view('view_admin');
 				$this->load->view('footer');
 			}else {
