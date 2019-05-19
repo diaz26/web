@@ -417,7 +417,7 @@
                       <td class="text-center"> <button type="button" style="text-align: center;width:100%;background-color: <?= $nav->bg_color; ?>;color: black" class="form-control" data-toggle="modal" data-target="#producto<?= $row->id; ?>">Ver</button> </td>
                       <td class="text-center"><?php  echo $row->precio;?> $USD</td>
                       <td class="text-center"><a href="<?= base_url()."index.php/productos/Editar/".$row->id;?>" style="text-align: center;width:100%;background-color: #0069d9;color: black" class="form-control" >Modificar</a></td>
-                      <td class="text-center"><button type="button" style="background-color: red;border-color:red ;text-align: center;width:100%;color: black" class="form-control" data-toggle="modal" data-target="#eliminar<?= $row->id; ?>">Eliminar</button></td>
+                      <td class="text-center"><button type="submit" style="background-color: red;border-color:red ;text-align: center;width:100%;color: black" class="form-control" data-toggle="modal" data-target="#eliminar<?= $row->id; ?>">Eliminar</button></td>
 
                       <div class="modal fade" id="producto<?= $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="z-index: 99999999;">
                         <div class="modal-dialog" role="document">
@@ -450,6 +450,7 @@
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">¿Deseas eliminar el producto?</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <a href="<?= base_url()."index.php/productos/Eliminar/".$row->id;?>"  style="text-align: center;width:50%;background-color: #c82333;color: black" class="form-control">Eliminar</a>
                                 <span aria-hidden="true">&times;</span>
                               </button>
                             </div>

@@ -58,7 +58,7 @@ class Model_productos extends CI_Model {
 
   public function eliminar($id){
     $this->db->where('id',$id);
-    $this->db->delete('baseo_productos');
+    $this->db->delete('web_productos');
   }
 
   public function agregar($agregados){

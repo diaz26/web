@@ -61,6 +61,8 @@ class Productos extends CI_Controller {
 
   }
 
+
+
   public function modificar(){
     if ($this->session->userdata('logged_in')) {
       if($this->session->userdata('ROL')=='Admin'){
@@ -187,17 +189,17 @@ class Productos extends CI_Controller {
   public function eliminar($id){
     if ($this->session->userdata('logged_in')) {
 
-      if($this->session->userdata('ROL')=='Cliente'){
+      if($this->session->userdata('ROL')=='Admin'){
 
-        $id_dueno=$this->session->userdata('ID');
-        $num=$this->model_productos->verifica_priedad($id);
-        if ($id_dueno==$num->id_dueno) {
+        //$id_dueno=$this->session->userdata('ID');
+      //  $num=$this->model_productos->verifica_priedad($id);
+      //  if ($id_dueno==$num->id_dueno) {
           $this->model_productos->eliminar($id);
-        }
-        redirect("Productos",'refresh');
-      }else {
-        $this->load->view('error_page');
-      }
+      //  }
+        redirect("Admin",'refresh');
+      }//else {
+      //  $this->load->view('error_page');
+      //}
     }else {
       redirect("login");
     }
