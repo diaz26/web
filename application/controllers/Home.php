@@ -7,11 +7,13 @@ class Home extends CI_Controller {
     parent::__construct();
 		$this->load->model('model_nav');
 		$this->load->model('model_banner');
+		$this->load->model('Model_productos');
   }
 
 	public function index()
 	{
 		$nav['nav']=$this->model_nav->consultNav(1);
+		$nav['productos']=$this->Model_productos->consultaproductos();
 		$body['banner']=$this->model_banner->consultBanner(1);
 		$this->load->view('header',$nav);
 		$this->load->view('view_home',$body);

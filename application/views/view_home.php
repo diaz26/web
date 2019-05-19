@@ -37,32 +37,30 @@
                     <div class="col-lg-1">
 
                     </div>
+                    <<?php foreach ($productos as $row ){
+
+                     ?>
                     <div class="col-lg-5">
                       <center>
+
+
+
                         <div class="card text-white bg-secondary mb-3" style="width:50%;">
-                          <img src="<?= base_url(); ?>images/5.jpg" style="width:100%" class="card-img-top" alt="...">
+
+                          <img src="<?= base_url().$row->img;?>" style="width:100%" class="card-img-top" alt="...">
                           <div class="card-body" style="background-color: #AEC0B8">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title"><?= $row->nombre; ?></h5>
+                            <p class="card-text"><?= " ".$row->descripcion; ?> title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF;border-color: red">Detalles</a>
                             <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF;border-color: red">Ver en tienda</a>
                           </div>
                         </div>
                       </center>
                     </div>
-                    <div class="col-lg-5">
-                      <center>
-                        <div class="card text-white bg-secondary mb-3" style="width:50%">
-                          <img src="<?= base_url(); ?>images/6.jpg" style="width:100%" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF;border-color: red">Detalles</a>
-                            <a href="#" class="btn btn-primary btn-sm" style="background-color: #e3f2fd; color: #007BFF;border-color: red">Ver en tienda</a>
-                          </div>
-                        </div>
-                      </center>
-                    </div>
+                    <?php
+                      }
+                    ?>
+
                     <div class="col-lg-1">
 
                     </div>
@@ -80,6 +78,7 @@
               </a>
             </div>
           </div>
+
           <div class="card-footer text-muted">
             <a href="#" class="btn btn-primary" style="background-color: #e3f2fd; color: #007BFF">Ver todos</a>
           </div>
