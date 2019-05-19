@@ -25,11 +25,11 @@ class Login extends CI_Controller {
 			$users=$this->input->post('user');
 			$pass=$this->input->post('pass');
 			//$security=$this->input->post('security');
-			$result=$this->model_login->comprobar($user,$pass);
+			$result=$this->model_login->comprobar($users,$pass);
 
 			if ($result->comprobando==1) {
 
-				$date=$this->model_login->traer($user,$pass);
+				$date=$this->model_login->traer($users,$pass);
 				$session=array(
 					'ID'=>$date->id,
 					'USER'=>$date->user,
