@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="LeadDigital  Landing page Template">
   <!--Titulo-->
-  <title><?= $head->nombre; ?></title>
+  <title><?= $nav->nombre; ?></title>
   <!--Css-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css">
@@ -25,8 +25,8 @@
   <!-- Fonts styles -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?= base_url().$head->logo; ?>" >
-  <link rel="icon" href="<?= base_url().$head->logo; ?>" >
+  <link rel="shortcut icon" href="<?= base_url().$nav->logo; ?>" >
+  <link rel="icon" href="<?= base_url().$nav->logo; ?>" >
   <!--JS-->
   <script src="<?= base_url(); ?>assets/js/modernizr.js"></script>
   <script type="text/javascript" language="javascript" src="<?= base_url() ?>assets/js/colorPicker.js"></script>

@@ -403,7 +403,7 @@
 
               <div class="hero-text">
 
-                <center><h3>Mis productos</h3></center>
+                <center><h3>Administracion de productos</h3></center>
                 <a href="<?= base_url()."index.php/productos/agregar";?>" style="text-align: center;width:15%;background-color: <?= $nav->bg_color; ?>" class="form-control">Agregar</a>
                 <br>
                 <table class="table">

@@ -34,7 +34,7 @@ class Model_productos extends CI_Model {
   }
 
   public function producto($id){
-    $sql= "SELECT * from baseo_productos where id='$id'";
+    $sql= "SELECT * from web_productos where id='$id'";
     $query=$this->db->query($sql);
     return $query->row();
   }

@@ -38,19 +38,20 @@ class Productos extends CI_Controller {
   public function Editar($id){
     if ($this->session->userdata('logged_in')) {
 
-      if($this->session->userdata('ROL')=='Cliente'){
+      if($this->session->userdata('ROL')=='Admin'){
 
-        $id_dueno=$this->session->userdata('ID');
-        $num=$this->model_productos->verifica_priedad($id);
-        if ($id_dueno==$num->id_dueno) {
-          $header['head']=$this->model_header->consultOficial(1);
+        //$id_dueno=$this->session->userdata('ID');
+        //$num=$this->model_productos->verifica_priedad($id);
+      //  if ($id_dueno==$num->id_dueno) {
+          //$header['head']=$this->model_header->consultOficial(1);
+          $nav['nav']=$this->model_nav->consultNav(1);
           $dataid['producto']=$this->model_productos->producto($id);
-          $this->load->view('header_loged',$header);
+          $this->load->view('header_loged',$nav);
           $this->load->view('view_modproductos',$dataid);
-          $this->load->view('footer_loged',$header);
-        }else {
-          $this->load->view('error_page');
-        }
+        //  $this->load->view('footer');
+          //$this->load->view('footer_loged',$header);
+        //}
+
       }else {
         $this->load->view('error_page');
       }
@@ -137,7 +138,7 @@ class Productos extends CI_Controller {
             'descripcion'=>$this->input->post('descripcion'),
             'parte'=>$this->input->post('parte'),
             'ubicacion'=>$this->input->post('ubicacion'),
-            'precio'=>$this->input->post('Precio'),
+            'precio'=>$this->input->post('precio'),
             'marca'=>$this->input->post('marca'),
             'referencia'=>$this->input->post('referencia'),
             'year'=>$this->input->post('year'),
