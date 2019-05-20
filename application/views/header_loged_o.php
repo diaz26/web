@@ -26,16 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" style="text-align: right">
         <li class="nav-item">
-          <a class="nav-link" href="#home"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op1; ?></b></a>
+          <a class="nav-link" href="<?= base_url(); ?>index.php/admin#home"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op1; ?></b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#banner"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar página</b></a>
+          <a class="nav-link" href="<?= base_url(); ?>index.php/admin#banner"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar página</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar productos</b></a>
+          <a class="nav-link" href="<?= base_url(); ?>index.php/admin#productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar productos</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contacto"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Contacto</b></a>
+          <a class="nav-link" href="<?= base_url(); ?>index.php/admin#contacto"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Contacto</b></a>
         </li>
       </ul>
     </div>

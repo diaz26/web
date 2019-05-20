@@ -14,9 +14,8 @@ class Home extends CI_Controller {
 	{
 		$nav['nav']=$this->model_nav->consultNav(1);
 		$nav['productos']=$this->Model_productos->consultaproductos();
-		$body['banner']=$this->model_banner->consultBanner(1);
 		$this->load->view('header',$nav);
-		$this->load->view('view_home',$body);
+		$this->load->view('view_home');
 		$this->load->view('footer');
 	}
 }

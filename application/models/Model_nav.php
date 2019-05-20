@@ -8,7 +8,7 @@ class Model_nav extends CI_Model {
   }
 
   public function consultNav($id){
-    $sql="SELECT wn.*, wb.btn_fuente, wb.btn_bgcolor, wb.btn_bordercolor, wb.btn_fuente, wb.btn4 from web_navbar wn, web_banner wb where wn.id='$id' and wb.id='$id'";
+    $sql="SELECT wn.* from web_navbar wn where wn.id=$id";
     $query=$this->db->query($sql);
     return $query->row();
   }

@@ -10,12 +10,12 @@ class Model_admin extends CI_Model {
 
   public function actNav($datos,$id){
     $this->db->where('id',$id);
-    $this->db->update('baseo_oficial',$datos);
+    $this->db->update('web_navbar',$datos);
   }
 
-  public function actSer($datos,$id){
+  /*public function actSer($datos,$id){
     $this->db->where('id',$id);
     $this->db->update('baseo_service',$datos);
-  }
+  }*/
 
 }

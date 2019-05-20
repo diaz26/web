@@ -7,20 +7,18 @@ class Model_productos extends CI_Model {
     parent::__construct();
   }
 
-/*
+
   public function productos()
   {
-    $id=$this->session->userdata('ID');
-    $sql="SELECT * from baseo_productos where id_dueno=$id";
+    $sql="SELECT * from web_productos";
     $query=$this->db->query($sql);
     return $query->result();
   }
-*/
+
 
   public function consultaproductos()
   {
-  //  $id=$this->session->userdata('ID');
-    $sql="SELECT * from web_productos";
+    $sql="SELECT * from web_productos ORDER BY RAND() LIMIT 2";
     $query=$this->db->query($sql);
     return $query->result();
   }

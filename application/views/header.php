@@ -47,7 +47,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" action="<?= base_url(); ?>index.php/productos/search">
         <input class="form-control mr-sm-2" type="search" placeholder="<?= $nav->search; ?>" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="font-family: <?= $nav->btn_fuente ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color: <?= $nav->btn_bordercolor; ?>"><?= $nav->btn4; ?></button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="font-family: <?= $nav->fuente ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color: <?= $nav->btn_bordercolor; ?>">Buscar</button>
       </form>
     </div>
   </nav>

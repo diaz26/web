@@ -12,11 +12,11 @@ class Productos extends CI_Controller {
   }
 
   public function index()
-	{
-		$this->load->view('header');
-		$this->load->view('view_productos');
-		$this->load->view('footer');
-	}
+  {
+    $this->load->view('header');
+    $this->load->view('view_productos');
+    $this->load->view('footer');
+  }
 
   public function aaaa()
   {
@@ -37,21 +37,12 @@ class Productos extends CI_Controller {
 
   public function Editar($id){
     if ($this->session->userdata('logged_in')) {
-
       if($this->session->userdata('ROL')=='Admin'){
 
-        //$id_dueno=$this->session->userdata('ID');
-        //$num=$this->model_productos->verifica_priedad($id);
-      //  if ($id_dueno==$num->id_dueno) {
-          //$header['head']=$this->model_header->consultOficial(1);
-          $nav['nav']=$this->model_nav->consultNav(1);
-          $dataid['producto']=$this->model_productos->producto($id);
-          $this->load->view('header',$nav);
-          $this->load->view('view_modproductos',$dataid);
-        //  $this->load->view('footer');
-          //$this->load->view('footer_loged',$header);
-        //}
-
+        $nav['nav']=$this->model_nav->consultNav(1);
+        $dataid['producto']=$this->model_productos->producto($id);
+        $this->load->view('header_loged_o',$nav);
+        $this->load->view('view_modproductos',$dataid);
       }else {
         $this->load->view('error_page');
       }
@@ -60,8 +51,6 @@ class Productos extends CI_Controller {
     }
 
   }
-
-
 
   public function modificar(){
     if ($this->session->userdata('logged_in')) {
@@ -100,7 +89,6 @@ class Productos extends CI_Controller {
             'referencia'=>$this->input->post('referencia'),
             'year'=>$this->input->post('year'),
             'color'=>$this->input->post('color'),
-            //'img'=>$urldeimagen.$dataCargada['file_name'],
           );
         }
         $id=$this->input->post('id');
@@ -116,13 +104,9 @@ class Productos extends CI_Controller {
   public function agregar(){
     if ($this->session->userdata('logged_in')) {
       if($this->session->userdata('ROL')=='Admin'){
-        //$nav['nav']=$this->model_header->consultOficial(1);
-        //$header['productos']=$this->model_productos->traerproductos();
         $nav['nav']=$this->model_nav->consultNav(1);
-        //$this->load->view('header_loged',$nav);
-        $this->load->view('header',$nav);
+        $this->load->view('header_loged',$nav);
         $this->load->view('view_agregar');
-      //  $this->load->view('footer_loged');
         $this->load->view('footer');
       }else {
         $this->load->view('error_page');
@@ -172,8 +156,6 @@ class Productos extends CI_Controller {
             'year'=>$this->input->post('year'),
             'color'=>$this->input->post('color'),
             'img'=>$urldeimagen.$dataCargada['file_name'],
-
-            //'id_dueno'=>$this->session->userdata('ID')
           );
         }
         $this->model_productos->agregar($agregados);
@@ -192,18 +174,18 @@ class Productos extends CI_Controller {
       if($this->session->userdata('ROL')=='Admin'){
 
         //$id_dueno=$this->session->userdata('ID');
-      //  $num=$this->model_productos->verifica_priedad($id);
-      //  if ($id_dueno==$num->id_dueno) {
-          $this->model_productos->eliminar($id);
-      //  }
+        //  $num=$this->model_productos->verifica_priedad($id);
+        //  if ($id_dueno==$num->id_dueno) {
+        $this->model_productos->eliminar($id);
+        //  }
         redirect("Admin",'refresh');
       }//else {
-      //  $this->load->view('error_page');
-      //}
-    }else {
-      redirect("login");
+        //  $this->load->view('error_page');
+        //}
+      }else {
+        redirect("login");
+      }
     }
+
+
   }
-
-
-}

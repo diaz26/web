@@ -18,8 +18,7 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('logged_in')){
 			if($this->session->userdata('ROL')=='Admin'){
       	$nav['nav']=$this->model_nav->consultNav(1);
-      //  $nav['banner']=$this->model_nav-> consultBanner(1);
-        $nav['productos']=$this->Model_productos->consultaproductos();
+        $nav['productos']=$this->Model_productos->productos();
 				$this->load->view('header_loged',$nav);
 				$this->load->view('view_admin');
 				$this->load->view('footer');
@@ -42,40 +41,43 @@ class Admin extends CI_Controller {
 
         $this->load->library('upload', $config);
 
-        /*$url_con=  $this->input->post('url');
-        $cod_yt = substr(strrchr($url_con, "/"), 1 );
-        $base_yt= 'https://www.youtube.com/embed/';
-        $url_yt = $base_yt.$cod_yt;*/
-
         if ($this->upload->do_upload('tcarga')){
           $dataCargada = $this->upload->data();
           $datos=array(
             'nombre'=>$this->input->post('nombre'),
-            'abreviacion'=>$this->input->post('abreviacion'),
-            'nav_bg'=>$this->input->post('nav_bg'),
-            'color'=>$this->input->post('color'),
-            'fuente'=>$this->input->post('fuente'),
-            'size'=>$this->input->post('size'),
+            'nombre_web'=>$this->input->post('nombre_web'),
             'op1'=>$this->input->post('op1'),
             'op2'=>$this->input->post('op2'),
-            'op3'=>$this->input->post('op3'),
             'op4'=>$this->input->post('op4'),
+            'op3'=>$this->input->post('op3'),
+            'op31'=>$this->input->post('op31'),
+            'op32'=>$this->input->post('op32'),
+            'op33'=>$this->input->post('op33'),
+            'bg_color'=>$this->input->post('bg_color'),
+            'fuente'=>$this->input->post('fuente'),
+            'size'=>$this->input->post('size'),
             'search'=>$this->input->post('search'),
+            'btn_bgcolor'=>$this->input->post('btn_bgcolor'),
+            'btn_bordercolor'=>$this->input->post('btn_bordercolor'),
             'logo'=> $urldeimagen.$dataCargada['file_name']
           );
         }else {
           $datos=array(
             'nombre'=>$this->input->post('nombre'),
-            'abreviacion'=>$this->input->post('abreviacion'),
-            'nav_bg'=>$this->input->post('nav_bg'),
-            'color'=>$this->input->post('color'),
-            'fuente'=>$this->input->post('fuente'),
-            'size'=>$this->input->post('size'),
+            'nombre_web'=>$this->input->post('nombre_web'),
             'op1'=>$this->input->post('op1'),
             'op2'=>$this->input->post('op2'),
-            'op3'=>$this->input->post('op3'),
             'op4'=>$this->input->post('op4'),
+            'op3'=>$this->input->post('op3'),
+            'op31'=>$this->input->post('op31'),
+            'op32'=>$this->input->post('op32'),
+            'op33'=>$this->input->post('op33'),
+            'bg_color'=>$this->input->post('bg_color'),
+            'fuente'=>$this->input->post('fuente'),
+            'size'=>$this->input->post('size'),
             'search'=>$this->input->post('search'),
+            'btn_bgcolor'=>$this->input->post('btn_bgcolor'),
+            'btn_bordercolor'=>$this->input->post('btn_bordercolor'),
           );
         }
         $id=$this->input->post('id');
