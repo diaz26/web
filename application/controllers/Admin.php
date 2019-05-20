@@ -31,6 +31,15 @@ class Admin extends CI_Controller {
 		}
 	}
 
+  public function session_dest(){
+		$session = array(
+			'logged_in' => FALSE
+		);
+		$this->session->set_userdata($session);
+		$this->session->sess_destroy();
+		redirect("".base_url()."index.php/login");
+	}
+
   public function modNav(){
     if($this->session->userdata('logged_in')){
       if ($this->session->userdata('ROL')=='Admin') {

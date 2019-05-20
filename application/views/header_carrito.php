@@ -28,9 +28,6 @@
           <a class="nav-link" href="<?= base_url(); ?>"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op1; ?></b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url(); ?>index.php/productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op2; ?></b></a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op4; ?></b> </a>
         </li>
         <li class="nav-item">

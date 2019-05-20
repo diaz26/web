@@ -183,10 +183,7 @@ public function insertPago($cod_pedido=NULL,$id_usuario=NULL,$valor_pago=NULL){
     for($i=0;$i<count($arreglo);$i++){
       $numero=$i;
     }
-    $arreglo[$numero]['Cantidad']=0;
-    unset($arreglo[$numero]);
-    $arreglo = array_values($arreglo);
-    $_SESSION['carrito']=$arreglo;
+    unset($_SESSION['carrito']);
   }
   redirect("productos",  'refresh');
 }
