@@ -3,52 +3,33 @@
 <head>
 </head>
 <body data-spy="scroll" data-target=".navbar-default" data-offset="100">
-
   <section id="home" class="hero">
-
     <div class="slide-home">
-
       <div class="slide-item">
-
         <div class="container">
-
           <div class="row hero-padd">
-
             <div class="col-md-6 col-12 col-sm-6 ml-auto mr-auto">
-
               <div class="hero-text">
-                <center><h2>Login</h2></center>
+                <center><h2>Login</h2>
                 <form action="<?= base_url(); ?>index.php/Login/valida" method="post">
-
+                  <?php echo $this->session->flashdata('msg'); ?>
                   <div class="form-group">
-                    <center><input style="width:50%;text-align: center" type="text" name="user" class="form-control" placeholder="User" required></center>
+                    <input style="width:50%;text-align: center" type="text" name="user" class="form-control" placeholder="User" required>
                   </div>
                   <div class="form-group">
-                    <center><input style="width:50%;text-align: center" type="password" name="pass" class="form-control" placeholder="Password" required></center>
+                    <input style="width:50%;text-align: center" type="password" name="pass" class="form-control" placeholder="Password" required>
                   </div>
-
                   <div class="form-group">
-                    <center><input type="submit" class="form-control" value="Ingresar" style="width:35%;background-color: <?= $nav->bg_color; ?>"></center>
-                  </div>
-                  <div class="input-group">
-                    <?php echo $this->session->flashdata('msg'); ?>
+                    <input type="submit" class="form-control" value="Ingresar" style="width:35%;background-color: <?= $nav->bg_color; ?>"></center>
                   </div>
                 </form>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
-
   <script src="<?= base_url(); ?>assets/js/jquery-2.1.1.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/jquery.easing.js"></script>

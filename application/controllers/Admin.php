@@ -20,8 +20,7 @@ class Admin extends CI_Controller {
       	$nav['nav']=$this->model_nav->consultNav(1);
       //  $nav['banner']=$this->model_nav-> consultBanner(1);
         $nav['productos']=$this->Model_productos->consultaproductos();
-				$this->load->view('header',$nav);
-
+				$this->load->view('header_loged',$nav);
 				$this->load->view('view_admin');
 				$this->load->view('footer');
 			}else {

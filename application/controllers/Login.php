@@ -45,7 +45,7 @@ class Login extends CI_Controller {
 
 			}
 			else {
-						$this->session->set_flashdata('msg', '<div> User/Password or Security Invalid</div>');
+						$this->session->set_flashdata('msg', '<div> User/Password Invalid</div>');
 						redirect("".base_url()."index.php/login");
 					}
 		}else {

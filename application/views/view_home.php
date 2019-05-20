@@ -42,11 +42,7 @@
                      ?>
                     <div class="col-lg-5">
                       <center>
-
-
-
                         <div class="card text-white bg-secondary mb-3" style="width:50%;">
-
                           <img src="<?= base_url().$row->img;?>" style="width:100%" class="card-img-top" alt="...">
                           <div class="card-body" style="background-color: #AEC0B8">
                             <h5 class="card-title"><?= $row->nombre; ?></h5>
@@ -60,13 +56,10 @@
                     <?php
                       }
                     ?>
-
                     <div class="col-lg-1">
-
                     </div>
                   </div>
                 </div>
-
               </div>
               <a class="carousel-control-prev" href="#carouselExampleFade1" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" style="background-color:black" aria-hidden="true"></span>
