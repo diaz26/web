@@ -13,4 +13,21 @@ class Model_nav extends CI_Model {
     return $query->row();
   }
 
+  public function consultConsec($aa){
+    $sql= "SELECT pr900 FROM web_navbar WHERE id=$aa";
+    $query=$this->db->query($sql);
+    return $query->row()->pr900;
+  }
+
+  public function alteraConsec($datos){
+    $this->db->where('id',1);
+    $this->db->update('web_navbar',$datos);
+  }
+
+  public function consul_cuenta_paypal($id){
+    $sql= "SELECT paypal FROM web_navbar WHERE id=$id";
+    $query=$this->db->query($sql);
+    return $query->row()->paypal;
+  }
+
 }

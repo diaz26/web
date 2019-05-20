@@ -1,4 +1,4 @@
-<body >
+<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
   <div class="content" >
     <div class="row">
       <div class="col-lg-12" >
@@ -44,11 +44,37 @@
                           <div class="card-body" style="background-color: #AEC0B8">
                             <h5 class="card-title"><?= $row->nombre; ?></h5>
                             <p class="card-text"><?= " ".$row->descripcion; ?></p>
-                            <a href="#" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Detalles</a>
-                            <a href="#" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Ver en tienda</a>
+                            <!--a data-toggle="modal" data-target="#producto<?= $row->id; ?>" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Detalles</a-->
+                            <a href="<?= base_url(); ?>index.php/productos/product/<?= $row->id; ?>" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Ver en tienda</a>
                           </div>
                         </div>
                       </center>
+                    </div>
+                    <div class="modal fade" id="producto<?= $row->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="z-index: 99999999;">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><?= $row->nombre; ?></h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <center><img src="<?= base_url().$row->img;?>" width="300" height="300"></center>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Descripcion:</b> <?= " ".$row->descripcion; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Marca:</b> <?= " ".$row->marca; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Año:</b> <?= " ".$row->year; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Color:</b> <?= " ".$row->color; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Precio:</b> <?= " ".$row->precio; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>Parte:</b> <?= " ".$row->parte; ?></p>
+                            <p style="font-size: 13px; margin-bottom: 0px; margin-top: 0px"><b>ubicación:</b> <?= " ".$row->ubicacion; ?></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <?php
                       }

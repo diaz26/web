@@ -15,25 +15,72 @@ class Productos extends CI_Controller {
   {
     $nav['nav']=$this->model_nav->consultNav(1);
     $nav['productos']=$this->model_productos->productos();
+    $nav['categ']=$this->model_productos->categorias();
     $this->load->view('header_ecommerce',$nav);
     $this->load->view('view_ecommerce');
     $this->load->view('footer');
   }
 
-  public function aaaa()
+  public function product($ban=NULL)
   {
+    if ($ban!=NULL) {
+      $nav['nav']=$this->model_nav->consultNav(1);
+      $nav['product']=$this->model_productos->producto($ban);
+      $nav['categ']=$this->model_productos->categorias();
+      $this->load->view('header_ecommerce',$nav);
+      $this->load->view('view_ecommerce');
+      $this->load->view('footer');
+    }else {
+      redirect("productos",'refresh');
+    }
+  }
+
+  public function despachar($cod){
     if ($this->session->userdata('logged_in')) {
-      if($this->session->userdata('ROL')=='Cliente'){
-        $header['head']=$this->model_header->consultOficial(1);
-        $header['productos']=$this->model_productos->Productos();
-        $this->load->view('header_loged',$header);
-        $this->load->view('view_productos');
-        $this->load->view('footer_loged');
+
+      if($this->session->userdata('ROL')=='Admin'){
+
+        $id_dueno=$this->session->userdata('ID');
+        $num=$this->model_productos->verifica_priedadDE($cod);
+        if ($id_dueno==$num) {
+          $arr = array('estado_pedido' => 2, );
+          $this->model_productos->despachar($arr,$cod);
+        }
+        redirect("Admin",'refresh');
       }else {
         $this->load->view('error_page');
       }
     }else {
       redirect("login");
+    }
+  }
+
+  public function buscar()
+  {
+    if (isset($_POST['search'])) {
+      $flag=$this->input->post('search');
+      $nav['nav']=$this->model_nav->consultNav(1);
+      $nav['productos']=$this->model_productos->buscarproductos($flag);
+      $nav['categ']=$this->model_productos->categorias();
+      $this->load->view('header_ecommerce',$nav);
+      $this->load->view('view_ecommerce');
+      $this->load->view('footer');
+    }else {
+      redirect("productos",'refresh');
+    }
+  }
+
+  public function categoria($ban=NULL)
+  {
+    if ($ban!=NULL) {
+      $nav['nav']=$this->model_nav->consultNav(1);
+      $nav['productos']=$this->model_productos->categproductos($ban);
+      $nav['categ']=$this->model_productos->categorias();
+      $this->load->view('header_ecommerce',$nav);
+      $this->load->view('view_ecommerce');
+      $this->load->view('footer');
+    }else {
+      redirect("productos",'refresh');
     }
   }
 

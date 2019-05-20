@@ -34,7 +34,7 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op4; ?></b> </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url(); ?>index.php/carrito"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Carrito</b></a>
+          <a class="nav-link" href="<?= base_url(); ?>index.php/carrito/carga_carrito"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Carrito</b></a>
         </li>
       </ul>
     </div>

@@ -7,10 +7,8 @@ class Admin extends CI_Controller {
     parent::__construct();
   //  $this->load->model('model_header');
     $this->load->model('model_admin');
-    $this->load->model('model_service');
     $this->load->model('model_nav');
-    $this->load->model('model_banner');
-    $this->load->model('Model_productos');
+    $this->load->model('model_productos');
   }
 
   public function index()
@@ -18,9 +16,12 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('logged_in')){
 			if($this->session->userdata('ROL')=='Admin'){
       	$nav['nav']=$this->model_nav->consultNav(1);
-        $nav['productos']=$this->Model_productos->productos();
+        $nav['productos']=$this->model_productos->productos();
+        $result['pedidosP']=$this->model_productos->consultPedidosP(1);
+        $result['pedidosD']=$this->model_productos->consultPedidosD(1);
+				$result['products']=$this->model_productos->productosPedidos();
 				$this->load->view('header_loged',$nav);
-				$this->load->view('view_admin');
+				$this->load->view('view_admin',$result);
 				$this->load->view('footer');
 			}else {
 				$this->load->view('error_page');

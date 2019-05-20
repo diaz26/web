@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar productos</b></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pedidos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Pedidos</b></a>
+        </li>
       </ul>
     </div>
   </nav>
