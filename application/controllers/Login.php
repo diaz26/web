@@ -13,9 +13,8 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$nav['nav']=$this->model_nav->consultNav(1);
-		$body['banner']=$this->model_banner->consultBanner(1);
 		$this->load->view('header',$nav);
-		$this->load->view('view_login',$body);
+		$this->load->view('view_login');
 		$this->load->view('footer');
 	}
 

@@ -7,10 +7,10 @@
     <div class="slide-home">
       <div class="slide-item">
         <div class="container">
-          <div class="row hero-padd">
+          <div class="row hero-padd" style="padding-top: 100px">
             <div class="col-md-6 col-12 col-sm-6 ml-auto mr-auto">
               <div class="hero-text">
-                <center><h2>Login</h2>
+                <center><h2 style="font-family:<?= $nav->fuente; ?>">Login</h2>
                 <form action="<?= base_url(); ?>index.php/Login/valida" method="post">
                   <?php echo $this->session->flashdata('msg'); ?>
                   <div class="form-group">
@@ -20,7 +20,7 @@
                     <input style="width:50%;text-align: center" type="password" name="pass" class="form-control" placeholder="Password" required>
                   </div>
                   <div class="form-group">
-                    <input type="submit" class="form-control" value="Ingresar" style="width:35%;background-color: <?= $nav->bg_color; ?>"></center>
+                    <input type="submit" value="Ingresar" style="font-family:<?= $nav->fuente; ?>;width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control">
                   </div>
                 </form>
               </div>
@@ -30,15 +30,6 @@
       </div>
     </div>
   </section>
-  <script src="<?= base_url(); ?>assets/js/jquery-2.1.1.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/jquery.easing.js"></script>
-  <script src="<?= base_url(); ?>assets/js/wow.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/magnific-popup.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/jquery.scrollUp.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/jquery.ajaxchimp.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/slick.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/main.js"></script>
 
 </body>
 <!-- Mirrored from design-graphma.com/demo/sedmy/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Mar 2019 04:47:26 GMT -->

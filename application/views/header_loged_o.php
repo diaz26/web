@@ -34,9 +34,6 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url(); ?>index.php/admin#productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Editar productos</b></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?= base_url(); ?>index.php/admin#contacto"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Contacto</b></a>
-        </li>
       </ul>
     </div>
   </nav>

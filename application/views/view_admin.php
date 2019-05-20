@@ -126,13 +126,22 @@
                   <input type="text" name="btn_bgcolor" class="form-control" value="<?php echo $nav->btn_bgcolor; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
                 </div>
               </div>
-              <div class="col-md-4 px-md-1" style="">
+              <div class="col-md-3 px-md-1" style="">
                 <div class="form-group">
                   <label><b>Letra botón:</b></label><br>
                   <input type="text" name="btn_bordercolor" class="form-control" value="<?php echo $nav->btn_bordercolor; ?>" onclick="startColorPicker(this)" onkeyup="maskedHex(this)">
                 </div>
               </div>
               <div class="col-md-4 pl-md-1" style="">
+                <div class="form-group">
+                  <label><b>Cuenta Paypal:</b></label><br>
+                  <input type="email" name="paypal" class="form-control" value="<?php echo $nav->paypal; ?>" required>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
                 <br>
                 <center><input type="submit" value="Actualizar" style="width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control"></center>
               </div>
@@ -150,11 +159,11 @@
           <h3><b>Productos</b></h3>
           <hr>
           <center>
-          <a href="<?= base_url()."index.php/productos/agregar";?>" style="text-align: center;width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control">
-            Agregar
-          </a>
-        </center>
-        <br>
+            <a href="<?= base_url()."index.php/productos/agregar";?>" style="text-align: center;width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control">
+              Agregar
+            </a>
+          </center>
+          <br>
           <table class="table">
             <?php
             foreach ($productos as $row)
@@ -164,11 +173,11 @@
                 <td class="text-center"><?php  echo $row->nombre; ?> </td>
                 <td class="text-center">
                   <center>
-                  <button type="button" style="width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control" data-toggle="modal" data-target="#producto<?= $row->id; ?>">
-                    Ver
-                  </button>
-                </center>
-                 </td>
+                    <button type="button" style="width:150px;border-color:<?php echo $nav->btn_bordercolor; ?>;color:<?php echo $nav->btn_bordercolor; ?> ;background-color:<?php echo $nav->btn_bgcolor; ?>" class="form-control" data-toggle="modal" data-target="#producto<?= $row->id; ?>">
+                      Ver
+                    </button>
+                  </center>
+                </td>
                 <td class="text-center"><center><a href="<?= base_url()."index.php/productos/Editar/".$row->id;?>" style="text-align: center;width:150px;border-color: blue;background-color: white;color: blue" class="form-control" >Modificar</a></td></center>
                 <td class="text-center"><center><button type="submit" style="background-color: white;border-color:red ;text-align: center;width:150px;color: red" class="form-control" data-toggle="modal" data-target="#eliminar<?= $row->id; ?>">Eliminar</button></center></td>
 
@@ -206,7 +215,6 @@
                       <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">¿Deseas eliminar el producto?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <a href="<?= base_url()."index.php/productos/Eliminar/".$row->id;?>"  style="text-align: center;width:50%;background-color: #c82333;color: black" class="form-control">Eliminar</a>
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -217,37 +225,11 @@
                     </div>
                   </div>
                 </div>
-
                 <?php
-
               }
               ?>
             </tr>
           </table>
-        </div>
-      </div>
-    </div>
-  </section>
-  <hr>
-  <section class="hero" id="clientes">
-    <div class="slide-home">
-      <div class="slide-item">
-        <div class="container">
-          <div class="row hero-padd">
-            holas clientes
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <hr>
-  <section class="hero" id="pagos">
-    <div class="slide-home">
-      <div class="slide-item">
-        <div class="container">
-          <div class="row hero-padd">
-            holas ganancias
-          </div>
         </div>
       </div>
     </div>

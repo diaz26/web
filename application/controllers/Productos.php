@@ -13,8 +13,10 @@ class Productos extends CI_Controller {
 
   public function index()
   {
-    $this->load->view('header');
-    $this->load->view('view_productos');
+    $nav['nav']=$this->model_nav->consultNav(1);
+    $nav['productos']=$this->model_productos->productos();
+    $this->load->view('header_ecommerce',$nav);
+    $this->load->view('view_ecommerce');
     $this->load->view('footer');
   }
 
@@ -105,7 +107,7 @@ class Productos extends CI_Controller {
     if ($this->session->userdata('logged_in')) {
       if($this->session->userdata('ROL')=='Admin'){
         $nav['nav']=$this->model_nav->consultNav(1);
-        $this->load->view('header_loged',$nav);
+        $this->load->view('header_loged_o',$nav);
         $this->load->view('view_agregar');
         $this->load->view('footer');
       }else {
@@ -141,25 +143,13 @@ class Productos extends CI_Controller {
             'year'=>$this->input->post('year'),
             'color'=>$this->input->post('color'),
             'img'=>$urldeimagen.$dataCargada['file_name'],
-
-            //'id_dueno'=>$this->session->userdata('ID')
           );
+          $this->model_productos->agregar($agregados);
+          redirect("Admin",'refresh');
         }else{
-          $agregados = array(
-            'nombre'=>$this->input->post('nombre'),
-            'descripcion'=>$this->input->post('descripcion'),
-            'parte'=>$this->input->post('parte'),
-            'ubicacion'=>$this->input->post('ubicacion'),
-            'precio'=>$this->input->post('precio'),
-            'marca'=>$this->input->post('marca'),
-            'referencia'=>$this->input->post('referencia'),
-            'year'=>$this->input->post('year'),
-            'color'=>$this->input->post('color'),
-            'img'=>$urldeimagen.$dataCargada['file_name'],
-          );
+          $this->session->set_flashdata('error','<div class="alert alert-danger text-center">Carga incorrecta! Agregue una imagen</div>');
+          redirect("productos/agregar");
         }
-        $this->model_productos->agregar($agregados);
-        redirect("Admin",'refresh');
       }else {
         $this->load->view('error_page');
       }

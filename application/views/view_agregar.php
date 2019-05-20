@@ -7,9 +7,10 @@
     <div class="content">
       <div class="container">
         <div class="col-md-10 col-12 ml-auto mr-auto">
+          <center><?php echo $this->session->flashdata('error'); ?></center>
           <h3><b>Agregar producto</b></h3>
           <hr>
-          <form action="<?=base_url(); ?>index.php/Productos/agregardeverdad/" method="post"  enctype="multipart/form-data">
+          <form action="<?=base_url(); ?>index.php/Productos/agregardeverdad/" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-3 pr-md-1">
                 <div class="form-group">

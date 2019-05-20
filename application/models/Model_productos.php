@@ -18,7 +18,7 @@ class Model_productos extends CI_Model {
 
   public function consultaproductos()
   {
-    $sql="SELECT * from web_productos ORDER BY RAND() LIMIT 2";
+    $sql="SELECT * from web_productos ORDER BY RAND() LIMIT 3";
     $query=$this->db->query($sql);
     return $query->result();
   }

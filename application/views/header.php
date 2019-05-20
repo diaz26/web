@@ -11,6 +11,7 @@
   <title><?= $nav->nombre_web; ?></title>
   <link rel="shortcut icon" href="<?= base_url().$nav->logo; ?>" >
   <link rel="icon" href="<?= base_url().$nav->logo; ?>" >
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: <?= $nav->bg_color; ?>;">
@@ -29,20 +30,14 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url(); ?>index.php/productos"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op2; ?></b></a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op3; ?></b>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: <?= $nav->bg_color; ?>;">
-            <a class="dropdown-item" href="<?= base_url(); ?>index.php/historia"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op31; ?></b></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<?= base_url(); ?>index.php/contacto"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op32; ?></b></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<?= base_url(); ?>index.php/proveedores"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op33; ?></b></a>
-          </div>
-        </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px"><?= $nav->op4; ?></b> </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url(); ?>index.php/login"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Ingresar</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url(); ?>index.php/carrito"><b style="font-family: <?= $nav->fuente ?>;font-size: <?= $nav->size; ?>px">Carrito</b></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" action="<?= base_url(); ?>index.php/productos/search">

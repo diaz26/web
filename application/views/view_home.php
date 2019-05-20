@@ -37,13 +37,13 @@
                     <?php
                     foreach ($productos as $row ){
                      ?>
-                    <div class="col-lg-5 ml-auto mr-auto">
+                    <div class="col-lg-3 ml-auto mr-auto">
                       <center>
-                        <div class="card text-white bg-secondary mb-3" style="width:50%;">
-                          <img src="<?= base_url().$row->img;?>" style="width:100%" class="card-img-top" alt="...">
+                        <div class="card text-white bg-secondary mb-3" style="width:100%;">
+                          <img src="<?= base_url().$row->img;?>" style="width:300px; height:240px">
                           <div class="card-body" style="background-color: #AEC0B8">
                             <h5 class="card-title"><?= $row->nombre; ?></h5>
-                            <p class="card-text"><?= " ".$row->descripcion; ?> title and make up the bulk of the card's content.</p>
+                            <p class="card-text"><?= " ".$row->descripcion; ?></p>
                             <a href="#" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Detalles</a>
                             <a href="#" class="btn btn-primary btn-sm" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Ver en tienda</a>
                           </div>
@@ -56,19 +56,10 @@
                   </div>
                 </div>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleFade1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" style="background-color:black" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleFade1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" style="background-color:black" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-              </a>
             </div>
           </div>
-
           <div class="card-footer text-muted">
-            <a href="#" class="btn btn-primary" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Ver todos</a>
+            <a href="<?= base_url(); ?>index.php/productos" class="btn btn-primary" style="font-family: <?= $nav->fuente; ?>;background-color: <?= $nav->btn_bgcolor; ?>; color: <?= $nav->btn_bordercolor; ?>;border-color:<?= $nav->btn_bordercolor; ?>">Ver todos</a>
           </div>
         </div>
       </div>

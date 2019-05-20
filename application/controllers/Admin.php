@@ -59,7 +59,8 @@ class Admin extends CI_Controller {
             'search'=>$this->input->post('search'),
             'btn_bgcolor'=>$this->input->post('btn_bgcolor'),
             'btn_bordercolor'=>$this->input->post('btn_bordercolor'),
-            'logo'=> $urldeimagen.$dataCargada['file_name']
+            'logo'=> $urldeimagen.$dataCargada['file_name'],
+            'paypal'=>$this->input->post('paypal'),
           );
         }else {
           $datos=array(
@@ -78,6 +79,7 @@ class Admin extends CI_Controller {
             'search'=>$this->input->post('search'),
             'btn_bgcolor'=>$this->input->post('btn_bgcolor'),
             'btn_bordercolor'=>$this->input->post('btn_bordercolor'),
+            'paypal'=>$this->input->post('paypal'),
           );
         }
         $id=$this->input->post('id');
