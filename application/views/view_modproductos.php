@@ -13,26 +13,20 @@
               <hr>
               <form action="<?=base_url(); ?>index.php/productos/modificar/" method="post" enctype="multipart/form-data">
                 <div class="row">
-                  <div class="col-md-3 pr-md-1">
+                  <div class="col-md-4 pr-md-1">
                     <div class="form-group">
                       <label><b>Nombre:</b></label><br>
                       <input type="text" class="form-control" name="nombre" value="<?php  echo $producto->nombre; ?>" required>
                       <input type="hidden" name="id" value="<?php  echo $producto->id; ?>">
                     </div>
                   </div>
-                  <div class="col-md-3 px-md-1">
+                  <div class="col-md-4 px-md-1">
                     <div class="form-group">
                       <label><b>Marca:</b></label><br>
                       <input type="text" class="form-control" name="marca" value="<?php  echo $producto->marca; ?>" required>
                     </div>
                   </div>
-                  <div class="col-md-3 px-md-1">
-                    <div class="form-group">
-                      <label><b>Referencia:</b></label><br>
-                      <input type="text" class="form-control" name="referencia" value="<?php  echo $producto->referencia; ?>" required>
-                    </div>
-                  </div>
-                  <div class="col-md-3 pl-md-1">
+                  <div class="col-md-4 pl-md-1">
                     <div class="form-group">
                       <label><b>Año</b></label><br>
                       <input type="text" class="form-control" name="year" value="<?php  echo $producto->year; ?>" required>

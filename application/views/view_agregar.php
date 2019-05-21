@@ -12,25 +12,19 @@
           <hr>
           <form action="<?=base_url(); ?>index.php/Productos/agregardeverdad/" method="post" enctype="multipart/form-data">
             <div class="row">
-              <div class="col-md-3 pr-md-1">
+              <div class="col-md-4 pr-md-1">
                 <div class="form-group">
                   <label><b>Nombre:</b></label><br>
                   <input type="text" class="form-control" name="nombre" required>
                 </div>
               </div>
-              <div class="col-md-3 px-md-1">
+              <div class="col-md-4 px-md-1">
                 <div class="form-group">
                   <label><b>Marca:</b></label><br>
                   <input type="text" class="form-control" name="marca" required>
                 </div>
               </div>
-              <div class="col-md-3 px-md-1">
-                <div class="form-group">
-                  <label><b>Referencia:</b></label><br>
-                  <input type="text" class="form-control" name="referencia" required>
-                </div>
-              </div>
-              <div class="col-md-3 pl-md-1">
+              <div class="col-md-4 pl-md-1">
                 <div class="form-group">
                   <label><b>Año:</b></label><br>
                   <input type="number" class="form-control" name="year" required>

@@ -5,8 +5,6 @@ class Productos extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
-    $this->load->model('model_header');
-    $this->load->model('model_clientes');
     $this->load->model('model_productos');
     $this->load->model('model_nav');
   }
@@ -121,7 +119,7 @@ class Productos extends CI_Controller {
             'ubicacion'=>$this->input->post('ubicacion'),
             'precio'=>$this->input->post('precio'),
             'marca'=>$this->input->post('marca'),
-            'referencia'=>$this->input->post('referencia'),
+            'referencia'=>$this->genera_cod_pedido(),
             'year'=>$this->input->post('year'),
             'color'=>$this->input->post('color'),
             'img'=>$urldeimagen.$dataCargada['file_name'],
@@ -135,7 +133,7 @@ class Productos extends CI_Controller {
             'ubicacion'=>$this->input->post('ubicacion'),
             'precio'=>$this->input->post('precio'),
             'marca'=>$this->input->post('marca'),
-            'referencia'=>$this->input->post('referencia'),
+            'referencia'=>$this->genera_cod_pedido(),
             'year'=>$this->input->post('year'),
             'color'=>$this->input->post('color'),
           );
@@ -150,6 +148,21 @@ class Productos extends CI_Controller {
       redirect("login");
     }
   }
+
+  public function genera_cod_pedido(){
+    #cosulta consecutivo
+    $consecutivo= $this->model_nav->consultConsec(1);
+    $data_update = array("pr900"	=> $consecutivo+1,);
+    $this->model_nav->alteraConsec($data_update);
+    //Genera número de pedido
+    $cod_pedido ="COD_PED".$this->generateRandomString(6).$consecutivo;
+    return $cod_pedido;
+  }
+
+  function generateRandomString($length) {
+    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+  }
+
   public function agregar(){
     if ($this->session->userdata('logged_in')) {
       if($this->session->userdata('ROL')=='Admin'){
@@ -194,7 +207,7 @@ class Productos extends CI_Controller {
           $this->model_productos->agregar($agregados);
           redirect("Admin",'refresh');
         }else{
-          $this->session->set_flashdata('error','<div class="alert alert-danger text-center">Carga incorrecta! Agregue una imagen</div>');
+          $this->session->set_flashdata('error','<div class="alert alert-danger text-center">Carga incorrecta! Error de imagen/div>');
           redirect("productos/agregar");
         }
       }else {
@@ -207,18 +220,12 @@ class Productos extends CI_Controller {
 
   public function eliminar($id){
     if ($this->session->userdata('logged_in')) {
-
       if($this->session->userdata('ROL')=='Admin'){
-
-        //$id_dueno=$this->session->userdata('ID');
-        //  $num=$this->model_productos->verifica_priedad($id);
-        //  if ($id_dueno==$num->id_dueno) {
         $this->model_productos->eliminar($id);
-        //  }
         redirect("Admin",'refresh');
-      }//else {
-        //  $this->load->view('error_page');
-        //}
+      }else {
+         $this->load->view('error_page');
+        }
       }else {
         redirect("login");
       }
